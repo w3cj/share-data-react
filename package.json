@@ -6,7 +6,11 @@
     "bootswatch": "^3.3.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-redux": "^5.0.5",
+    "react-scripts": "1.0.10",
+    "redux": "^3.7.2",
+    "redux-devtools": "^3.4.0",
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "react-scripts start",

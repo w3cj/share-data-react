@@ -5,31 +5,21 @@ class CampsiteForm extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.addCampsite = this.addCampsite.bind(this);
-    this.state = {
-      name: '',
-      location: '',
-      description: ''
-    }
   }
 
   handleChange(e) {
-    this.setState({
-      [e.target.id]: e.target.value
-    });
+    if(e.target.id == 'name') {
+      this.props.onSetNewCampsiteName(e.target.value);
+    }
   }
 
   addCampsite(e) {
     e.preventDefault();
-    this.props.onAddCampsite(this.state);
-    this.setState({
-      name: '',
-      location: '',
-      description: ''
-    });
+    this.props.onAddCampsite(this.props.newCampForm);
   }
 
   render() {
-    const {name, location, description} = this.state;
+    const {name, location, description} = this.props.newCampForm;
     return (
       <div>
         <form className="form" onSubmit={this.addCampsite}>
